@@ -17,7 +17,8 @@ key <- Sys.getenv("GOOGLEPLACES_KEY") #add you own key
 
 
 # landmark types "https://developers.google.com/places/supported_types"
-type = "grocery_or_supermarket"
+#type = "grocery_or_supermarket"
+type = "pharmacy"
 # search radius
 radius = 2640 # roughly 500 meters
 
@@ -51,7 +52,7 @@ placeQuery <- function(coordsPair){
 }
 
 #placesDF <- coordList %>% purrr::map_df(~placeQuery(.x))
-placesDF <- read_csv(file.path(dataDir, 'placesDF.csv'))
+#placesDF <- read_csv(file.path(dataDir, 'placesDF.csv'))
 # we want to keep unique rows
 cleanDF <- placesDF %>% distinct()
 cleanSF <- st_as_sf(cleanDF, coords = c("long", "lat"), crs = 4326)

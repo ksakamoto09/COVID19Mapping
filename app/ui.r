@@ -15,6 +15,8 @@ ui <-  bootstrapPage(
                  tabPanel("Economic Vulnerability",
                           leafletOutput("evMap")),
                  tabPanel("Health Vulnerability"),
+               tabPanel("Population Demographics",
+                        leafletOutput("demoMap")),
                  tabPanel("Resiliency"),
                  tabPanel("About")
 )
